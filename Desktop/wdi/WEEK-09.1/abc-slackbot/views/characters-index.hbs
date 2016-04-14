@@ -2,10 +2,13 @@
 
 {{#each characters as |character|}}
 <p>
-  {{character.symbol}}
-  {{character.pinyin}}
-  {{character.meaning}}
-  {{character.used_as}}
+  <a href="/translate/{{character.meaning}}">
+  {{character.symbol}} /
+  </a>
+  {{character.pinyin}} /
+  {{character.meaning}} /
+  {{character.used_as}} /
   {{character.example}}
+
 </p>
 {{/each}}

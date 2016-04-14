@@ -29,14 +29,23 @@ app.get("/characters", function(req, res){
   });
 });
 
+//res.send("My name is" + " " + req.params.word);
 // e.g. localhost:3000/translate/hello
+// TODO: write code to return the equivalent chinese
+// loop thru characters
+// if (character.meaning == req.params.word) then render character.symbol
 app.get("/translate/:word", function(req, res){
-  // TODO: write code to return the equivalent chinese
-  // loop thru characters
-  // if (character.meaning == req.params.word) then render character.symbol
-  res.send("My name is" + " " + req.params.word);
-
-})
+  var selectedCharacter = req.params.word;
+  var characterPunch;
+  db.characters.forEach(function(character){
+    if(character.meaning = selectedCharacter){
+      characterPunch = character;
+    }
+  });
+  res.render("characters-show", {
+    character: characterPunch
+  });
+});
 
 app.listen(3001, function(){
   console.log("我在世");

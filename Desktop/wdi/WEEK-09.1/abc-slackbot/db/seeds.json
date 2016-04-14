@@ -1,6 +1,6 @@
 [
   {
-    "symbol": "nihao",
+    "symbol": "你好",
     "pinyin": "nihao",
     "meaning": "hello",
     "used_as": "greeting",
@@ -8,7 +8,7 @@
 
   },
   {
-    "symbol": "wo",
+    "symbol": "我",
     "pinyin": "wo",
     "meaning": "I",
     "used_as": "noun",
