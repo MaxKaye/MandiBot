@@ -5,7 +5,6 @@
     "meaning": "hello",
     "used_as": "greeting",
     "example": "nihao Matt"
-
   },
   {
     "symbol": "我",
@@ -13,6 +12,13 @@
     "meaning": "I",
     "used_as": "noun",
     "example": "wo shi Max"
-
+  },
+  {
+    "symbol": "是",
+    "pinyin": "shi",
+    "meaning": "is",
+    "used_as": "passive verb",
+    "example": "wo shi Max"
   }
+
 ]

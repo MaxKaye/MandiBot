@@ -38,7 +38,7 @@ app.get("/translate/:word", function(req, res){
   var selectedCharacter = req.params.word;
   var characterPunch;
   db.characters.forEach(function(character){
-    if(character.meaning = selectedCharacter){
+    if(character.meaning == selectedCharacter){
       characterPunch = character;
     }
   });
