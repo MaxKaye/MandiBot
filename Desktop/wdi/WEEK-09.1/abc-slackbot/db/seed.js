@@ -1,4 +1,13 @@
-// 1. load info from seeds.json into mondo
+// 1. load info from seeds.json into mongo
+var mongoose = require("./connection");
+var seedData = require("./seeds.json");
+
+var Character = mongoose.model("Character");
+
+Character.remove({}).then(function(){
+  Character.collection.insert(seedData);  
+});
+
 // 2. Once that works, and express app shows what you want
 //   seed db from excel instead of seeds.json
 

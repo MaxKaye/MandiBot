@@ -1,5 +1,4 @@
 var mongoose = require("mongoose");
-var seedData = require("./seeds.json");
 
 var CharacterSchema = new mongoose.Schema({
   symbol: String,
@@ -12,6 +11,4 @@ var CharacterSchema = new mongoose.Schema({
 mongoose.model("Character", CharacterSchema);
 mongoose.connect("mongodb://localhost/abc-slackbot");
 
-module.exports = {
-  characters: seedData
-};
+module.exports = mongoose;
