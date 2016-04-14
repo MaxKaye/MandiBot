@@ -35,5 +35,3 @@ module.exports=function(bot){
 return message.reply("你好")
   })
 }
-
-return message.reply("你好")

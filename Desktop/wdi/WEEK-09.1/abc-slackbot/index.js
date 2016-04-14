@@ -29,6 +29,15 @@ app.get("/characters", function(req, res){
   });
 });
 
+// e.g. localhost:3000/translate/hello
+app.get("/translate/:word", function(req, res){
+  // TODO: write code to return the equivalent chinese
+  // loop thru characters
+  // if (character.meaning == req.params.word) then render character.symbol
+  res.send("My name is" + " " + req.params.word);
+
+})
+
 app.listen(3001, function(){
   console.log("我在世");
 });
