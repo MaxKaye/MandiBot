@@ -5,6 +5,8 @@ var frontpage = require("./frontpage");
 frontpage();
 
 var app = express();
+app.use("/public",
+express.static("public"));
 
 app.set("view engine", "hbs");
 app.engine(".hbs", hbs({
