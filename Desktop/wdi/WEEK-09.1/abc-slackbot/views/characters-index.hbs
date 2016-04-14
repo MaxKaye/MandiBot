@@ -1,0 +1,11 @@
+<h2> There are currently {{characters.length}} characters in the database.</h2>
+
+{{#each characters as |character|}}
+<p>{{character.id}}
+  {{character.symbol}}
+  {{character.pinyin}}
+  {{character.meaning}}
+  {{character.used_as}}
+  {{character.example}}
+</p>
+{{/each}}
