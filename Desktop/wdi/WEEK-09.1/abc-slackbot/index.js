@@ -1,11 +1,15 @@
 var express = require("express");
 var hbs = require("express-handlebars");
-var db = require("./db/connection");
+var mongoose = require("./db/connection");
 var frontpage = require("./frontpage");
 
 frontpage();
 
 var app = express();
+
+var Character = mongoose.model("Character");
+
+
 app.use("/public", express.static("public"));
 
 app.set("view engine", "hbs");
@@ -24,9 +28,11 @@ app.get("/", function(req, res){
 
 
 app.get("/characters", function(req, res){
+  Character.find({}).then(function(characterMongo){
   res.render("characters-index", {
-    characters: db.characters
+    characters: characterMongo
   });
+});
 });
 
 // e.g. localhost:3000/translate/hello
@@ -35,15 +41,11 @@ app.get("/characters", function(req, res){
 // if (character.meaning == req.params.word) then render character.symbol
 app.get("/translate/:word", function(req, res){
   var selectedCharacter = req.params.word;
-  var characterPunch;
-  db.characters.forEach(function(character){
-    if(character.meaning == selectedCharacter){
-      characterPunch = character;
-    }
-  });
+  Character.findOne({meaning: selectedCharacter}).then(function(character){
   res.render("characters-show", {
-    character: characterPunch
+    character: character
   });
+});
 });
 
 app.listen(3001, function(){
