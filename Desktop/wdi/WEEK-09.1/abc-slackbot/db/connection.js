@@ -1,4 +1,4 @@
-var seedData = require("./seeds");
+var seedData = require("./seeds.json");
 module.exports = {
   characters: seedData
 };

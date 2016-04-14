@@ -1,21 +1,18 @@
-
- [
+[
   {
-    "id": 0 ,
-    "symbol": "",
-    "pinyin": "",
-    "meaning": "",
-    "used_as": "",
-    "example": ""
+    "symbol": "nihao",
+    "pinyin": "nihao",
+    "meaning": "hello",
+    "used_as": "greeting",
+    "example": "nihao Matt"
 
   },
   {
-    "id": 1,
-    "symbol": "",
-    "pinyin": "",
-    "meaning": "",
-    "used_as": "",
-    "example": ""
+    "symbol": "wo",
+    "pinyin": "wo",
+    "meaning": "I",
+    "used_as": "noun",
+    "example": "wo shi Max"
 
   }
 ]

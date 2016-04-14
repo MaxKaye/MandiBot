@@ -1,6 +1,6 @@
 var express = require("express");
 var hbs = require("express-handlebars");
-var db= require(".db/connection")
+var db = require("./db/connection");
 var frontpage = require("./frontpage");
 
 frontpage();
@@ -25,7 +25,7 @@ app.get("/", function(req, res){
 
 app.get("/characters", function(req, res){
   res.render("characters-index", {
-  
+    characters: db.characters
   });
 });
 
