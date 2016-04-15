@@ -1,6 +1,7 @@
 var express = require("express");
 var hbs = require("express-handlebars");
 var mongoose = require("./db/connection");
+var parser = require("body-parser");
 var frontpage = require("./frontpage");
 
 frontpage();
@@ -11,6 +12,7 @@ var Character = mongoose.model("Character");
 
 
 app.use("/public", express.static("public"));
+app.use(parser.urlencoded({extended:true}));
 
 app.set("view engine", "hbs");
 app.engine(".hbs", hbs({
@@ -37,8 +39,6 @@ app.get("/characters", function(req, res){
 
 // e.g. localhost:3000/translate/hello
 // write code to return the equivalent chinese
-// loop thru characters
-// if (character.meaning == req.params.word) then render character.symbol
 app.get("/translate/:word", function(req, res){
   var selectedCharacter = req.params.word;
   Character.findOne({meaning: selectedCharacter}).then(function(character){
@@ -46,6 +46,13 @@ app.get("/translate/:word", function(req, res){
     character: character
   });
 });
+});
+
+app.post("/character", function(req, res){
+  var characterData = req.body.character;
+  Character.create(characterData).then(function(newCharacter){
+    res.redirect("/characters/" + newCharacter.symbol);
+  });
 });
 
 app.listen(3001, function(){

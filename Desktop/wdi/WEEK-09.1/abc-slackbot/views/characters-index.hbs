@@ -12,3 +12,12 @@
 
 </p>
 {{/each}}
+
+<form action="/character" method="post">
+  <input type = "text" name="character[symbol]" placeholder="Symbol" />
+  <input type = "text" name="character[pinyin]" placeholder="Pinyin" />
+  <input type = "text" name="character[meaning]" placeholder="Meaning" />
+  <input type = "text" name="character[used_as]" placeholder="Used As" />
+  <input type = "text" name="character[example]" placeholder="Example" />
+  <button type="submit"> Add Character </button>
+</form>
