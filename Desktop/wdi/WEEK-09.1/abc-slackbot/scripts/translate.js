@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost/reminders');
+mongoose.connect("mongodb://localhost/abc-slackbot");
 
 var db = mongoose.connection;
 
@@ -15,23 +15,19 @@ db.once('open', function() {
 var Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
 
-var ReminderSchema = new Schema({
+var CharacterSchema = new Schema({
   body: String
 });
 
-var AuthorSchema = new Schema({
-  name: String,
-  reminders: [ReminderSchema]
-});
+var CharacterModel = mongoose.model("Character", CharacterSchema);
 
-var AuthorModel = mongoose.model("Author", AuthorSchema);
-var ReminderModel = mongoose.model("Reminder", ReminderSchema);
+
 
 module.exports=function(bot){
   bot.hear(/hello/, function(message){
-    AuthorSchema.find({},function(authors){
-      return message.reply(authors)
-    })
-return message.reply("你好")
-  })
-}
+    CharacterSchema.find({},function(characters){
+    return message.reply("你好");
+    });
+
+  });
+};
