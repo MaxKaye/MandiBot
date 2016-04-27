@@ -10,9 +10,19 @@
 
 module.exports = (robot) ->
 
-  #
-  # robot.hear /badger/i, (res) ->
-  #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
+ robot.hear /mandi help/i, (res) ->
+    res.send "Here is commands list for Mandibot:
+
+1. <translate {word}>  translates to english from initial language using Google Hubot API.
+
+2. <mandi>  translates from online Chinese database
+
+3. <Is {word} in database?>  tells you if the word you wanted to learn is in the db”
+"
+
+
+  robot.hear /badger/i, (res) ->
+    res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
 
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
@@ -20,10 +30,10 @@ module.exports = (robot) ->
   #     res.reply "I'm afraid I can't let you do that."
   #   else
   #     res.reply "Opening #{doorType} doors"
-  
-  robot.hear /I like pie/i, (res) ->
-    res.emote "makes a freshly baked pie"
   #
+  # robot.hear /I like pie/i, (res) ->
+  #   res.emote "makes a freshly baked pie"
+  # #
   # lulz = ['lol', 'rofl', 'lmao']
   #
   # robot.respond /lulz/i, (res) ->
@@ -99,7 +109,7 @@ module.exports = (robot) ->
   #
   #   else
   #     res.reply 'Sure!'
-  #
+  # #
   #     robot.brain.set 'totalSodas', sodasHad+1
   #
   # robot.respond /sleep it off/i, (res) ->
