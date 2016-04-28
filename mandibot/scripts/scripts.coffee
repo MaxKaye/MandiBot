@@ -4,3 +4,9 @@ module.exports = (robot) ->
 
   robot.respond /sup/i, (res) ->
     res.emote "sup"
+
+  robot.respond /should I learn (.*) language/i, (res) ->
+    if res.match[1]
+      res.send "You should definitely learn" + " " + res.match[1] + " " + "sooner than later"
+    else
+      res.send "You should hire someone who knows" + " " + res.match[1]
