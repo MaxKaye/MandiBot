@@ -10,6 +10,13 @@ module.exports = (robot) ->
       data = JSON.parse body
       fortune = data[0].fortune.message
       msg.send(fortune)
+
+
+
+
+
+
+      
 # module.exports = function(robot) {
 #   robot.http("'https://www.goodreads.com/author/quotes/15321.Confucius")
 #   .get()(function(err, res, body) {

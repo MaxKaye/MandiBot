@@ -20,5 +20,5 @@ response = [
 ]
 
 module.exports = (robot) ->
-  robot.respond /(chinese quote).*/i, (msg) ->
+  robot.respond /(chinese idiom).*/i, (msg) ->
     msg.send msg.random response
