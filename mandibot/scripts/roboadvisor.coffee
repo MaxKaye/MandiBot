@@ -11,6 +11,9 @@ new_word = [
   'crud'
   'boy'
   'haha'
+  'nice'
+  'fine'
+  'smart'
 ]
 
 suggestAlternative = (words) ->
@@ -18,7 +21,7 @@ suggestAlternative = (words) ->
   words[i]
 
 module.exports = (robot) ->
-  robot.hear /(the ([^\s]+) )?(fuck|shit)/i, (res) ->
+  robot.hear /(the ([^\s]+) )?(fuck|shit|ass|ugly|dumbass|stupid)/i, (res) ->
     if res.match[2]
       res.send suggestAlternative(original) + ' the ' + res.match[2] + ' team instead?'
     else
