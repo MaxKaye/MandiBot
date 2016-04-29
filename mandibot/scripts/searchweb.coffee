@@ -1,17 +1,14 @@
+#full credit and thanks to Hubot Scripts with author "searls" for creating this hubot plugin. This plugin Googles <query> & returns 1st result's URL
+#URL: https://github.com/github/hubot-scripts/blob/master/src/scripts/google.coffee
+#Date of retrieval: 04/28/2016
 
+module.exports = (robot) ->
+  robot.respond /(google)( me)? (.*)/i, (msg) ->
+    googleMe msg, msg.match[3], (url) ->
+      msg.send url
 
-# module.exports = (robot) ->
-# robot.respond /confucius say/i, (res)
-#     robot.http("http://www.quotationspage.com/quotes/Confucius/")
-#       .get() (err, res, body) ->
-#         if err
-#           res.reply "Had problems taking the midnight train"
-#           robot.emit 'error', err, res
-#         else return
-#           res.send body
-
-# module.exports = (robot) ->
-#   robot.respond /deep/i, (msg) ->
-#     msg.http('http://maxkaye.github.io')
-#     .get() (error, response, body) ->
-#       msg.send body
+googleMe = (msg, query, cb) ->
+  msg.http('http://www.google.com/search')
+    .query(q: query)
+    .get() (err, res, body) ->
+      cb body.match(/class="r"><a href="\/url\?q=([^"]*)(&amp;sa.*)">/)?[1] || "Sorry, Google had zero results for '#{query}'"
