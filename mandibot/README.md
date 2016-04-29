@@ -2,6 +2,8 @@
 A sophisticated slackbot that responds to you with Chinese. Feel free to search its brain and add new words to its vocabulary. 受用SlackBot不尽!
 
 
+![alt text](Desktop/mandibot_demo.png "Demo")
+
 User stories:
 As a user in a chatroom, I want to be able to retrieve information from database in order to real-time translate conversations
 As a user in a chatroom, I want to be able to have a bot interject when someone insults me or uses profane language
